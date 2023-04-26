@@ -3,8 +3,9 @@
 import unittest
 from unittest.mock import patch
 from io import StringIO
-import pep8
 import os
+from os import getenv
+import pep8
 import json
 import console
 import tests
@@ -17,7 +18,6 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 from models.engine.file_storage import FileStorage
-from os import getenv
 
 
 class TestConsole(unittest.TestCase):
@@ -267,6 +267,7 @@ class TestConsole(unittest.TestCase):
         def test_update_db(self):
             """Test alternate destroy command inpout DB"""
             return True
+
 
 if __name__ == "__main__":
     unittest.main()

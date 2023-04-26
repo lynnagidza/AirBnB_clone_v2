@@ -265,7 +265,7 @@ class HBNBCommand(cmd.Cmd):
                     obj = storage.all()
                     key = args[0] + ' ' + args[1]
                     for k, v in args[2].items():
-                        self.do_update(key + ' "{}" "{}"'.format(k, v))
+                        self.do_update(f'{key} "{k}" "{v}"')
                 else:
                     self.do_update(args)
         else:

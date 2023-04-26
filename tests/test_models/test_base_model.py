@@ -59,8 +59,7 @@ class test_basemodel(unittest.TestCase):
     def test_str(self):
         """ """
         i = self.value()
-        self.assertEqual(str(i), '[{}] ({}) {}'.format(self.name, i.id,
-                         i.__dict__))
+        self.assertEqual(str(i), f"[{self.name}] ({i.id}) {i.__dict__}")
 
     def test_todict(self):
         """ """
@@ -97,3 +96,4 @@ class test_basemodel(unittest.TestCase):
         n = new.to_dict()
         new = BaseModel(**n)
         self.assertFalse(new.created_at == new.updated_at)
+        self.assertNotEqual(new.created_at, new.updated_at)
